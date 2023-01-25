@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <!--YYJ Network Studio Website-->
+	<title>文章</title>
+	<!--meta > charset-->
+	<meta charset="utf-8">
+	<!--meta > http-equiv-->
+	<meta http-equiv="content-language" content="zh-TW">
+	<!--meta > name-->
+	<meta name="author" content="YYJ">
+	<meta name="distribution" content="Taiwan">
+	<meta name="revisit-after" content="3 days">
+	<meta name="copyright" content="2023 © YYJ Network Studio">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Keywords -->
+	<meta name="keywords" Lang="zh-TW" content="人工智慧,機器學習,深度學習,什麼是人工智慧,什麼是機器學習">
+	<meta name="keywords" Lang="EN" content="AI,ML,DL,What is AI,What is ML,What is DL,What is DL">
+	<!-- Description -->
+	<meta name="description" content="人工智慧(Artificial Intelligence)、機器學習(Machine Learning)、深度學習(Deep Learning)是什麼？它們有什麼關聯？">
+	<!--link > rel-->
+	<link rel="icon" href="../static/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../static/css/css.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/rwd.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/article.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			YYJ Network Studio
+		</div>
+		<input type="checkbox" id="click">
+    	<label for="click" class="menu">
+        	<i class="fas fa-bars"></i>
+    	</label>
+		<ul>
+			<li>
+				<a href="https://yyjstudio.com/index">首頁</a>
+            	<a class="active" href="../index.html">文章</a>
+            	<a href="https://yyjstudio.com/service">服務</a>
+			</li>
+		</ul>
+	</nav>
+	<h1>AI人工智慧 #1｜人工智慧、機器學習、深度學習是什麼？</h1>
+	<div class="article-line"></div>
+	<div class="content">
+		<h3>人工智慧(Artificial Intelligence 簡稱AI)</h3>
+		<p>
+			由人製造出模仿人類思考進而模擬人類的能力和行為的程式。
+		</p>
+		<h3>機器學習(Machine Learning 簡稱ML)</h3>
+		<p>
+			透過過往的資料和經驗中學習，一種實現人工智慧的方法。機器學習大致上可以分為四類：
+		</p>
+		<h4>1. 監督式學習(Supervised)</h4>
+		<p>
+			假設要辨識0到9的數字，提供多張不同字型的0到9圖片，在人工標註(Label)這些圖片的數字，機器依照這些已標註的圖片去找尋特徵，依照特徵就能辨識出是哪一個數字。也就是說人工分類出每個資料對應的答案，機器就可以找到一樣答案但不同資料的共同特徵，藉由特徵去推測答案。	
+		</p>
+		<h4>2. 非監督式學習(Un-supervised)</h4>
+		<p>
+			所有的資料都沒有標註答案，機器透過尋找資料的特徵，自行分類，相對監督式學習，通常對人比較輕鬆，但是誤差也比較大。
+		</p>
+		<h4>3. 半監督式學習(Semi-supervised)</h4>
+		<p>
+			部分資料由人工標註答案，機器透過有標註的資料找尋特徵並對其他未標注的資料進行分類，藉由一些依據去推測其他資料的答案。
+		</p>
+		<h4>4. 強化式學習(Reinforcement)</h4>
+		<p>
+			所有的資料都沒有標註答案，機器自行尋找特徵，當機器推測出答案時，人工告訴機器是正確還是錯誤，透過每次正確與錯誤去改進，預測就會越來越精準。
+		</p>
+		<h3>深度學習(Deep Learning 簡稱DL)</h3>
+		<p>
+			一種實現機器學習的技術。深度學習是指具有層次性的機器學習法，第一層是輸入層(Input Layer)，以數字辨識來舉例，輸入層就是要輸入數字圖片，第二層則是隱藏層(Hidden Layer)，負責處理資料，隱藏層可以有無限多個，取決於要處理的資料複雜度而定，最後一層是輸出層(Output Layer)，辨識0-9的數字，那輸出層就會有9個神經元(Neuron)，一個神經元可以理解成一個答案，也就是說深度學習是模仿人腦思考的結構，而這種結構稱為神經網路(Neural Network)，接下來的人工智慧程式開發教學文章，都會跟神經網路息息相關。
+		</p>
+		<img src="https://www.tibco.com/sites/tibco/files/media_entity/2021-05/neutral-network-diagram.svg" alt="神經網路圖">
+	</div>
+	<footer>
+		<div class="footer-social-media">
+			<a href="https://www.facebook.com/profile.php?id=100064249505130"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://twitter.com/yyj_network"><i class="fa-brands fa-twitter"></i></a>
+			<a href="https://www.instagram.com/yang.yaozhu/"><i class="fa-brands fa-instagram"></i></a>
+			<a href="https://github.com/YYJ-TW"><i class="fa-brands fa-github"></i></a>
+		</div>
+		<div class="footer-pages">
+			<a href="https://yyjstudio.com/terms">服務條款</a>
+			<a href="https://yyjstudio.com/job">職缺</a>
+		</div>
+		<div class="footer-copyright">
+			<p>2023 &copy; YYJ Network Studio</p>
+		</div>
+	</footer>
+	<script src="https://kit.fontawesome.com/098165415c.js" crossorigin="anonymous"></script>
+</body>

@@ -1,0 +1,91 @@
+/*------------------------------------------------------------
+--------------------Navigation RWD Settings-------------------
+------------------------------------------------------------*/
+@media (max-width: 1000px) {
+    nav .logo {
+        font-size: 25px;
+        text-align: center;
+    }
+    nav .menu i {
+        display: block;
+    }
+    #click:checked ~ .menu i:before {
+        content: "\f00d"; /* X */
+    }
+    #click:checked ~ ul {
+        left: 0;
+    }
+    #click:checked ~ ul li a{
+        margin-left: 0px;
+    }
+    nav ul {
+        top: 100px;
+        z-index: 1;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: fixed;
+        text-align: center;
+        background: #1b1b1b;
+        transition: all 0.3s ease;
+    }
+    nav ul li{
+        width: 100%;
+        margin: 40px 0;
+    }
+    nav ul li a{
+        width: 100%;
+        display: block;
+        font-size: 20px;
+        margin-left: -100%;    
+    }
+}
+/*------------------------------------------------------------
+--------------------Introduction RWD Settings-----------------
+------------------------------------------------------------*/
+@media (max-width: 600px) {
+    .skills {
+        margin: 0 auto;
+        flex-direction: column;
+    }
+}
+/*------------------------------------------------------------
+--------------------Select RWD Settings-----------------------
+------------------------------------------------------------*/
+@media (min-width: 200px) {
+    .order select {
+        width: 70%;
+    }
+}
+@media (min-width: 1000px) {
+    .order select {
+        width: 50%;
+    }
+}
+@media (min-width: 1200px) {
+    .order select {
+        width: 30%;
+    }
+}
+/*------------------------------------------------------------
+--------------------Footer RWD Settings-----------------------
+------------------------------------------------------------*/
+@media (max-width: 600px) {
+    footer .footer-pages, .footer-copyright, .footer-social-media {
+        line-height: 2.0;
+        text-align: center;
+    }
+    footer .footer-social-media {
+        float: none;
+        margin: 0 auto 20px;
+    }
+}
+/*------------------------------------------------------------
+--------------------Register RWD Settings---------------------
+------------------------------------------------------------*/
+@media (max-width: 600px) {
+    .container {
+        padding: 50px;
+    }
+}
