@@ -57,7 +57,7 @@
 		<p>簡單來講，如果使用線性函數，無論神經網路有多少層(Layer)，都能用一層取代，也就是說非線性是為了讓神經網路可以有更複雜的計算。</p>
 		<h4>激活函數Sigmoid, ReLU, Leaky ReLU</h4>
 		<h5>Sigmoid</h5>
-		<p>中文稱S形函數，是將輸入數值映射到0到1之間，可以把下圖的橫線稱作x，直線稱作y，Sigmoid是將橫線x輸入值，轉換成直線y輸出值0-1之間。y輸出值靠近0或1時，線條的斜率會變得更小更平坦，也就是梯度變小導致梯度消失(Vanishing Gradient)的問題發生，以下提到的ReLU激活函數，就能解決這個問題。</p>
+		<p>中文稱S形函數，是將輸入數值映射到0到1之間，可以把下圖的橫線稱作x，直線稱作y，Sigmoid是將橫線x輸入值，轉換成直線y輸出值0-1之間。y輸出值趨近於0時，線條的斜率會變得更小更平坦，也就是梯度變小導致梯度消失(Vanishing Gradient)的問題發生，以下提到的ReLU激活函數，就能解決這個問題。</p>
 		<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/faaa0c014ae28ac67db5c49b3f3e8b08415a3f2b" alt="Sigmoid公式" width="50px" height="50px">
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/1200px-Logistic-curve.svg.png" alt="Sigmoid圖形">
 		<h5>ReLU</h5>
@@ -73,7 +73,7 @@
 		<h4>重點整理</h4>
 		<h5>Sigmoid</h5>
 		<p>優點：將輸出標準化，容易理解</p>
-		<p>缺點：正負輸入值如果非常廣，輸出的梯度會趨近於0或1，導致梯度消失的問題</p>
+		<p>缺點：正負輸入值如果非常廣，輸出的梯度會趨近於0時，導致梯度消失的問題</p>
 		<h5>ReLU</h5>
 		<p>優點：計算速度比Sigmoid快，解決了梯度消失的問題</p>
 		<p>缺點：不適用輸入值為負數，神經元死亡的問題，當輸入接近零或負數時，梯度會變0，導致無法反向傳播(Backpropagation)。</p>
