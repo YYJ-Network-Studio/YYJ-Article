@@ -57,17 +57,17 @@
 		<p>簡單來講，如果使用線性函數，無論神經網路有多少層(Layer)，都能用一層取代，也就是說非線性是為了讓神經網路可以有更複雜的計算。</p>
 		<h4>激活函數Sigmoid, ReLU, Leaky ReLU</h4>
 		<h5>Sigmoid</h5>
-		<p>中文稱S形函數，是將輸入數值映射到0到1之間，可以把下圖的橫線稱作x，直線稱作y，Sigmoid是將橫線x輸入值，轉換成直線y輸出值0-1之間。y輸出值趨近於0時，線條的斜率會變得更小更平坦，也就是梯度變小導致梯度消失(Vanishing Gradient)的問題發生，以下提到的ReLU激活函數，就能解決這個問題。</p>
+		<p>中文稱「S形函數」，是將輸入數值映射到0到1之間，可以把下圖的橫線稱作x，直線稱作y，Sigmoid是將橫線x輸入值，轉換成直線y輸出值0-1之間。y輸出值趨近於0時，線條的斜率會變得更小更平坦，也就是梯度變小導致梯度消失(Vanishing Gradient)的問題發生，以下提到的ReLU激活函數，就能解決這個問題。</p>
 		<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/faaa0c014ae28ac67db5c49b3f3e8b08415a3f2b" alt="Sigmoid公式" width="50px" height="50px">
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/1200px-Logistic-curve.svg.png" alt="Sigmoid圖形">
 		<h5>ReLU</h5>
-		<p>全名為Rectified Linear Unit，中文稱線性整流函數，計算方式簡單所以速度比Sigmoid，還能避免梯度消失和梯度爆炸(Exploding Gradients)的問題。</p>
+		<p>全名為Rectified Linear Unit，中文稱「線性整流函數」，計算方式簡單所以速度比Sigmoid，還能避免梯度消失和梯度爆炸(Exploding Gradients)的問題。</p>
 		<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5fa5d3598751091eed580bd9dca873f496a2d0ac" alt="ReLU公式" width="30px" height="30px">
 		<br>f(x)輸入值如果大於0，則輸出x，x = 1，f(x) = (0,1) = 1
 		<br>f(x)輸入值如果小於等於0，則輸出0，x = -1，f(x) = (0,-1) = 0
 		<img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Ramp_function.svg" alt="ReLU圖形">
 		<h5>Leaky ReLU</h5>
-		<p>中文稱帶泄露線性整流，是ReLU的進化版，但不代表說能取代ReLU。如果輸入為負數，則輸出為0，這導致神經元不會激活，Leaky ReLU會以很小的值(如0.01)來將負數的x輸入值，轉換成y輸出值。</p>
+		<p>中文稱「帶泄露線性整流」，是ReLU的進化版，但不代表說能取代ReLU。如果輸入為負數，則輸出為0，這導致神經元不會激活，Leaky ReLU會以很小的值(如0.01)來將負數的x輸入值，轉換成y輸出值。</p>
 		<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7ef462b36056ff49700914fc305a39cd0d8c1ef1" alt="Leaky ReLU公式" width="50px" height="50px">
 		<img src="http://kwassistfile.cupoy.com/0000017BAA952F3A000000096375706F795F72656C65617365414E53/1630034429718/large" alt="Leaky ReLU圖形">
 		<h4>重點整理</h4>
