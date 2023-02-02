@@ -42,3 +42,7 @@ h1 {
     padding-left: 10%;
     padding-right: 10%;
 }
+.source {
+    color: darkgray;
+    text-align: center;
+}

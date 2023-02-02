@@ -46,6 +46,7 @@
 	<div class="article-line"></div>
 	<div class="content">
         <img src="https://www.tibco.com/sites/tibco/files/media_entity/2021-05/neutral-network-diagram.svg" alt="神經網路圖">
+		<p class="source">資料來源：https://www.tibco.com</p>
 		<h3>神經網路的三層</h3>
         <p>再來複習一下神經網路的大致結構，分別是：</p>
         <p>輸入層(Input Layer)：接受非線性(Non-Linearity)輸入訊息，輸入的訊息稱為輸入向量，也可以稱為自變量(Independent Variable)。</p>
@@ -60,16 +61,21 @@
 		<p>中文稱「S形函數」，是將輸入數值映射到0到1之間，可以把下圖的橫線稱作x，直線稱作y，Sigmoid是將橫線x輸入值，轉換成直線y輸出值0-1之間。y輸出值趨近於0時，線條的斜率會變得更小更平坦，也就是梯度變小導致梯度消失(Vanishing Gradient)的問題發生，以下提到的ReLU激活函數，就能解決這個問題。</p>
 		<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/faaa0c014ae28ac67db5c49b3f3e8b08415a3f2b" alt="Sigmoid公式" width="50px" height="50px">
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/1200px-Logistic-curve.svg.png" alt="Sigmoid圖形">
+		<p class="source">資料來源：https://wikimedia.org</p>
 		<h5>ReLU</h5>
 		<p>全名為Rectified Linear Unit，中文稱「線性整流函數」，計算方式簡單所以速度比Sigmoid，還能避免梯度消失和梯度爆炸(Exploding Gradients)的問題。</p>
 		<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5fa5d3598751091eed580bd9dca873f496a2d0ac" alt="ReLU公式" width="30px" height="30px">
+		<p class="source">資料來源：https://wikimedia.org</p>
 		<br>f(x)輸入值如果大於0，則輸出x，x = 1，f(x) = (0,1) = 1
 		<br>f(x)輸入值如果小於等於0，則輸出0，x = -1，f(x) = (0,-1) = 0
 		<img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Ramp_function.svg" alt="ReLU圖形">
+		<p class="source">資料來源：https://wikimedia.org</p>
 		<h5>Leaky ReLU</h5>
 		<p>中文稱「帶泄露線性整流」，是ReLU的進化版，但不代表說能取代ReLU。如果輸入為負數，則輸出為0，這導致神經元不會激活，Leaky ReLU會以很小的值(如0.01)來將負數的x輸入值，轉換成y輸出值。</p>
 		<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7ef462b36056ff49700914fc305a39cd0d8c1ef1" alt="Leaky ReLU公式" width="50px" height="50px">
+		<p class="source">資料來源：https://wikimedia.org</p>
 		<img src="http://kwassistfile.cupoy.com/0000017BAA952F3A000000096375706F795F72656C65617365414E53/1630034429718/large" alt="Leaky ReLU圖形">
+		<p class="source">資料來源：http://kwassistfile.cupoy.com</p>
 		<h4>重點整理</h4>
 		<h5>Sigmoid</h5>
 		<p>優點：將輸出標準化，容易理解</p>
