@@ -71,6 +71,11 @@
 		<p>不過這樣看起來還是有些複雜，以下是簡化的數學算式：</p>
 		<img src="https://datasciocean.tech/wp-content/uploads/2022/02/perceptron-formula-1.jpg" alt="簡化感知器數學圖">
 		<p class="source">資料來源：https://datasciocean.tech</p>
+		<p>這裡多了個+b，b全名是Bias，中文稱「偏差」，權重乘以輸入最後加上偏差。以Sigmoid函式來舉例，假設希望輸出(y)都大於0.5，那麼輸入(x)要大於0才能達成，如果輸入(x)很多都小於0，就可以透過偏差去設置輸入(x)的起始點，讓輸入(x)最小值也在0，映射到輸出(y)就可以大於0.5。</p>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/1200px-Logistic-curve.svg.png" alt="Sigmoid圖形">
+		<p class="source">資料來源：https://wikimedia.org</p>
+		<h4>更新</h4>
+		<p>2023/2/3 新增偏差(Bias)的說明</p>
 	</div>
 	<footer>
 		<div class="footer-social-media">
