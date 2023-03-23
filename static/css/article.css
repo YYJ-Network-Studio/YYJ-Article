@@ -46,3 +46,6 @@ h1 {
     color: darkgray;
     text-align: center;
 }
+.link a {
+    display: block;
+}
