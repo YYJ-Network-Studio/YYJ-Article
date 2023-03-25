@@ -5,7 +5,6 @@ input[type="text"] {
     display: block;
     margin: 0 auto;
     border-radius: 5px;
-    background: #D8D8D8;
     border: 3px solid #666666;
 }
 .search {
@@ -13,12 +12,12 @@ input[type="text"] {
     background-color: #E5E5E5;
 }
 .article-list {
-    height: 100%;
+    z-index: 1;
+    height: auto;
     background-color: #E5E5E5;
 }
 .article-list li {
     width: 80%;
-    height: 100px;
     padding: 10px;
     display: table;
     margin: 0 auto;
@@ -49,8 +48,9 @@ h1 {
 }
 .content {
     padding-top: 20px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: white;
 }
 .source {
     color: darkgray;
@@ -72,5 +72,4 @@ img {
     margin-right: 0.5rem;
     padding: 0.2rem 0.4rem;
     background-color: #CCCCCC;
-  
 }

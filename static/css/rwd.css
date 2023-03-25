@@ -27,7 +27,7 @@
         display: block;
         position: fixed;
         text-align: center;
-        background: #1b1b1b;
+        background: #1B1B1B;
         transition: all 0.3s ease;
     }
     nav ul li{
@@ -43,16 +43,8 @@
 }
 /*------------------------------------------------------------
 --------------------Footer RWD Settings-----------------------
-------------------------------------------------------------*/
-@media (max-width: 768px) { /* Tablet */
-    footer {
-        margin-top: 200px;
-    }
-}
-@media (max-width: 600px) {
-    footer {
-        margin-top: 400px;
-    }
+------------------------------------------------------------*/  
+@media (max-width: 420px) {
     footer .footer-pages, .footer-copyright, .footer-social-media {
         line-height: 2.0;
         text-align: center;
