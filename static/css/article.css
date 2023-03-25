@@ -18,7 +18,7 @@ input[type="text"] {
 }
 .article-list li {
     width: 80%;
-    padding: 10px;
+    padding: 1%;
     display: table;
     margin: 0 auto;
     transition: 0.5s;
@@ -47,9 +47,7 @@ h1 {
     text-align: center;
 }
 .content {
-    padding-top: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 5%;
     background-color: white;
 }
 .source {
