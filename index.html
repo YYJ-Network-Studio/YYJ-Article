@@ -42,32 +42,47 @@
 			</li>
 		</ul>
 	</nav>
+	<div class="search">
+		<input type="text" id="search" onkeyup=search() placeholder="搜尋文章標題（例: 年齡焦慮）搜尋標籤（例: #AI）">
+	</div>
 	<div class="article-list">
 		<ul>
 			<li>
 				<a href="article/p1.html">年齡焦慮</a>
 				<p>國中時期因為開始做生意嘗試創業，網路使用量變大，開始會比較且理解現實的殘酷，以致於開始產生年齡焦慮，淺談年齡焦慮對我的影響。</p>
 				<span>2023/3/23</span>
+				<span class="hashtag">#焦慮</span>
+				<span class="hashtag">#個人經歷</span>
 			</li>
 			<li>
 				<a href="article/s1.html">AI人工智慧 特別篇｜AI對教育的影響</a>
 				<p>AI對教育有什麼影響？以及我認為台灣教育存在的一些問題，是否可以用AI來彌補不足？</p>
 				<span>2023/3/20</span>
+				<span class="hashtag">#教育</span>
+				<span class="hashtag">#AI</span>
 			</li>
 			<li>
 				<a href="article/3.html">AI人工智慧 #3｜感知器(Perceptron)</a>
 				<p>資料輸入到輸出之間除了激活函數還有什麼，來了解感知器吧！</p>
 				<span>2023/2/2</span>
+				<span class="hashtag">#AI</span>
+				<span class="hashtag">#Perceptron</span>
 			</li>
 			<li>
 				<a href="article/2.html">AI人工智慧 #2｜神經網路(Neural Network)與激活函數(Activation Function)</a>
 				<p>神經網路的三層結構以及激活函數(Sigmoid, ReLU, Leaky ReLU)是什麼？</p>
 				<span>2023/1/30</span>
+				<span class="hashtag">#AI</span>
+				<span class="hashtag">#NN</span>
+				<span class="hashtag">#Activation Function</span>
 			</li>
 			<li>
 				<a href="article/1.html">AI人工智慧 #1｜人工智慧、機器學習、深度學習是什麼？</a>
 				<p>人工智慧(Artificial Intelligence)、機器學習(Machine Learning)、深度學習(Deep Learning)是什麼？它們有什麼關聯？</p>
 				<span>2023/1/25</span>
+				<span class="hashtag">#AI</span>
+				<span class="hashtag">#ML</span>
+				<span class="hashtag">#DL</span>
 			</li>
 		</ul>
 	</div>
@@ -86,6 +101,7 @@
 			<p>2023 &copy; YYJ Network Studio</p>
 		</div>
 	</footer>
+	<script type="text/javascript" src="static/js/search.js"></script>
 	<script src="https://kit.fontawesome.com/098165415c.js" crossorigin="anonymous"></script>
 </body>
 </html>
