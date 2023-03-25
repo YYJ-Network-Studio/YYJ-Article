@@ -15,7 +15,7 @@ a:hover {
 }
 /*------------------------------------------------------------
 --------------------Navigation Menu Settings------------------
-------------------------------------------------------------*/ 
+------------------------------------------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -68,26 +68,6 @@ nav ul li a:hover {
     text-decoration: none;
 }
 /*------------------------------------------------------------
---------------------Header Banner Settings--------------------
-------------------------------------------------------------*/
-.banner {
-    width: 100%;
-    height: 40%;
-    filter: blur(3px);
-    position: relative;
-    background-size: cover;
-    background-position: center center;
-    background-image: url("../images/banner.jpg");
-}
-.banner-title {
-    top: 35%;
-    left: 50%;
-    color: white;
-    position: absolute;
-    text-align: center;
-    transform: translate(-50%, -50%);
-}
-/*------------------------------------------------------------
 --------------------Introduction Settings---------------------
 ------------------------------------------------------------*/
 .col-12 {
@@ -95,41 +75,15 @@ nav ul li a:hover {
     font-size: 20px;
     text-align: center;
 }
-.present {
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 3%;
-}
-.experience {
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 3%;
-}
-.skills {
-    padding: 3%;
-    display: flex;
-    margin: 0 auto;
-    text-align: center;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-.skills ul li {
-    width: 300px;
-    height: auto;
-    border-radius: 5px;
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    background-color: #8f9296;
-}
 /*------------------------------------------------------------
 --------------------Footer settings---------------------------
 ------------------------------------------------------------*/
 footer {
+    bottom: 0;
     width: 100%;
     padding: 50px 5%; /* Height Border */
     text-align: left;
-    position: absolute; /* Always on top */
+    position: fixed; /* Always on top */
     box-sizing: border-box;
     background-color: #1b1b1b;
     font: normal 15px sans-serif;
@@ -176,70 +130,4 @@ footer .footer-social-media a {
 footer .footer-social-media a:hover {
     transform: scale(1.1); 
     -webkit-transform: scale(1.1);
-}
-/*------------------------------------------------------------
---------------------Terms settings----------------------------
-------------------------------------------------------------*/
-.terms_title {
-    padding: 20px;
-    text-align: center;
-}
-.terms_line {
-    width: 50%;
-    height: 1px;
-    margin: 0 auto;
-    border-top: solid #0080FF 5px;
-}
-.terms_text {
-    text-align: left;
-    line-height: 150%;
-    padding: 10px 10%;
-}
-/*------------------------------------------------------------
---------------------Register settings-------------------------
-------------------------------------------------------------*/
-.container {
-    padding: 30px 200px 30px 200px;
-    background-color: white;
-}
-input[type=text], input[type=password] {
-    width: 100%;
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    background: #F1F1F1;
-}
-input[type=text]:focus, input[type=password]:focus {
-    outline: none;
-    border-radius: 5px;
-    background-color: #DDD;
-}
-hr {
-    margin-bottom: 25px;
-    border: 1px solid #F1F1F1;
-}
-.registerbtn {
-    width: 100%;
-    border: none;
-    opacity: 0.9;
-    margin: 8px 0;
-    color: white;
-    cursor: pointer;
-    transition: 0.5s;
-    padding: 16px 20px;
-    border-radius: 5px;
-    background-color: #04AA6D;
-}
-.registerbtn:hover {
-    opacity: 1;
-    transform: scale(0.99);
-}
-a {
-    color: dodgerblue;
-}
-.login {
-    text-align: center;
-    background-color: #F1F1F1;
 }
