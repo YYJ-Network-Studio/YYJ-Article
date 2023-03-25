@@ -12,13 +12,12 @@ input[type="text"] {
     background-color: #E5E5E5;
 }
 .article-list {
-    z-index: 1;
     height: auto;
     background-color: #E5E5E5;
 }
 .article-list li {
     width: 80%;
-    padding: 1%;
+    padding: 20px;
     display: table;
     margin: 0 auto;
     transition: 0.5s;
@@ -34,6 +33,15 @@ input[type="text"] {
 }
 .article-list span {
     float: right;
+}
+.hashtag {
+    color: #0077BE;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    background-color: #CCCCCC;
 }
 /* Article Content */
 .article-line {
@@ -61,13 +69,4 @@ img {
 }
 .link a {
     display: block;
-}
-.hashtag {
-    color: #0077BE;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 4px;
-    margin-right: 0.5rem;
-    padding: 0.2rem 0.4rem;
-    background-color: #CCCCCC;
 }
