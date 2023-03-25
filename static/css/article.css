@@ -1,20 +1,16 @@
 input[type="text"] {
     width: 80%;
-    border: none;
     outline: none;
     padding: 15px;
     display: block;
     margin: 0 auto;
     border-radius: 5px;
-    background: #F1F1F1;
+    background: #D8D8D8;
+    border: 3px solid #666666;
 }
 .search {
-    margin: 20px;
-}
-img {
-    width: 80%;
-    margin: 0 auto;
-    display: block;
+    padding: 1%;
+    background-color: #E5E5E5;
 }
 .article-list {
     height: 100%;
@@ -40,6 +36,7 @@ img {
 .article-list span {
     float: right;
 }
+/* Article Content */
 .article-line {
     width: 70%;
     height: 2px;
@@ -58,6 +55,11 @@ h1 {
 .source {
     color: darkgray;
     text-align: center;
+}
+img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
 }
 .link a {
     display: block;
