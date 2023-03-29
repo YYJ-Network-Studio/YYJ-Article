@@ -43,7 +43,10 @@
 		</ul>
 	</nav>
 	<div class="search">
-		<input type="text" id="search" onkeyup=search() placeholder="搜尋標題或標籤(例: 年齡焦慮、#AI)">
+		<input type="text" id="searchBar" onkeyup=search() placeholder="搜尋標題或標籤(例: 年齡焦慮、#AI)">
+		<span>文章分類</span>
+		<a class="a" onclick="searchByHashtag('教育')">#教育</a>
+		<a class="a" onclick="searchByHashtag('個人經歷')">#個人經歷</a>
 	</div>
 	<div class="article-list">
 		<ul>

@@ -1,5 +1,5 @@
 function search() {
-    let keyword = document.getElementById("search").value.toLowerCase(); // Get <input type="text" id="search">
+    let keyword = document.getElementById("searchBar").value.toLowerCase(); // Get <input type="text" id="searchBar">
     let articles = document.querySelectorAll(".article-list li"); // Get all li in .article-list
   
     articles.forEach(function(article) {
@@ -23,5 +23,24 @@ function search() {
         article.style.display = "none";
       }
     });
-  }
+  }  
+function searchByHashtag(keyword) {
+  let articles = document.querySelectorAll(".article-list li");
+    
+  articles.forEach(function(article) {
+    let hashtags = article.querySelectorAll(".hashtag");
+    let match = false;
+    
+    hashtags.forEach(function(hashtags) {
+      if (hashtags.textContent.toLowerCase().includes(keyword)) {
+        match = true;
+      }
+    });
+    if (match) {
+      article.style.display = "table";
+    } else {
+      article.style.display = "none";
+    }
+  });
+}
   

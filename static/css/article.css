@@ -1,15 +1,33 @@
-input[type="text"] {
+.search {
+    padding: 1%;
+    position: relative;
+    background-color: #E5E5E5;
+    text-align: center;
+}
+.search input[type="text"] {
     width: 80%;
     outline: none;
     padding: 15px;
     display: block;
     margin: 0 auto;
     border-radius: 5px;
+    margin-bottom: 10px;
     border: 3px solid #666666;
 }
-.search {
-    padding: 1%;
-    background-color: #E5E5E5;
+.search span {
+    margin-right: 10px;
+}
+.search a {
+    top: 50px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    align-items: center;
+    display: inline-flex;
+    margin-right: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    background-color: #CCCCCC;
 }
 .article-list {
     height: auto;
