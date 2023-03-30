@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    <!--YYJ Network Studio Website-->
+	<title>Proxmox VE 虛擬機管理 #1｜新增空間到local-lvm</title>
+	<!--meta > charset-->
+	<meta charset="utf-8">
+	<!--meta > http-equiv-->
+	<meta http-equiv="content-language" content="zh-TW">
+	<!--meta > name-->
+	<meta name="author" content="YYJ">
+	<meta name="distribution" content="Taiwan">
+	<meta name="revisit-after" content="3 days">
+	<meta name="copyright" content="2023 © YYJ Network Studio">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Keywords -->
+	<meta name="keywords" Lang="EN" content="Proxmox VE,PVE,vg,lv,lvm,how to add vg storage,how to add lvm storage">
+	<meta name="keywords" Lang="zh-TW" content="虛擬化平台,虛擬化管理平台,卷組,邏輯卷,新增儲存空間到local-lvm,新增硬碟到local-lvm,如何增加lvm的儲存空間">
+	<!-- Description -->
+	<meta name="description" content="AI對教育有什麼影響？以及我認為台灣教育存在的一些問題，是否可以用AI來彌補不足？">
+	<!--link > rel-->
+	<link rel="icon" href="../static/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../static/css/css.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/rwd.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/article.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			YYJ Network Studio
+		</div>
+		<input type="checkbox" id="click">
+    	<label for="click" class="menu">
+        	<i class="fas fa-bars"></i>
+    	</label>
+		<ul>
+			<li>
+				<a href="https://yyjstudio.com/index">首頁</a>
+            	<a class="active" href="../index.html">文章</a>
+            	<a href="https://yyjstudio.com/service">服務</a>
+			</li>
+		</ul>
+	</nav>
+	<h1>Proxmox VE 虛擬機管理 #1｜新增硬碟並將硬碟加入local-lvm</h1>
+	<div class="article-line"></div>
+	<div class="content">
+        <p>Proxmox VE(以下稱PVE)是基於Debian作業系統的開源伺服器虛擬化平台，這類的文章我不會寫得太詳細，就只是記錄一些重點，才會不太久沒弄就忘記。今天要講的是，把新的硬碟空間加入到local-lvm，讓虛擬機(VM)可以有更多空間使用。</p>
+        <h2>local與local-lvm</h2>
+        <img style="width: 30%" src ="../static/images/pve-datacenter.png">
+        <p>local: 儲存ISO Images、容器模板(CT Templates)、備份空間</p>
+        <p>local-lvm: 儲存虛擬機(以下稱VM)和容器(以下稱CT)的虛擬硬碟</p>
+        <img src="../static/images/pve-storage.png">
+        <p>Datacenter -> Storage即可看到上圖，local的Type是Directory，local-lvm的Type是LVM-Thin，LVM的好處是放VM或CT可以有快照(Snapshot)功能，缺點就是無法直接放檔案到LVM區塊。之前遇到的另一個小問題就是，LVM可以一直加上去，即便已經超過硬碟的容量，這導致顯示的容量與實際不符，手賤創超過，然後裝完VM後又在把超過的LVM刪掉，VM就無法從網頁控制面板刪除，要手動打指令去很多路徑刪掉VM的檔案。</p>
+        <h2>新增空間至local-lvm</h2>
+        <p><code>lsblk</code>檢查分區</p>
+        <p>PVE通常預設會選擇sda安裝系統，並把sda的部分空間給local-lvm，如果你有第二個硬碟那通常編號是sdb</p>
+		<h3>重建分割區</h3>
+        <p>1. <code>fdisk /dev/sdb</code>進入fdisk指令頁面(輸入m獲得指令列表)</p>
+		<p>2. 輸入<code>d</code>刪除分割區</p>
+		<p>3. 輸入<code>n</code>新增分區(基本預設值即可，一直按下Enter)</p>
+		<p>4. 輸入<code>w</code>儲存設定</p>
+		<p>5. 再次輸入<code>lsblk</code>應該會看到/dev/sdb1的分區
+		<p>6. <code>mkfs.ext4 /dev/sdb1</code>格式化硬碟</p>
+		<h3>擴展VG的儲存空間</h3>
+		<p>7. Volume Group中文稱卷組(以下簡稱VG)，由多個硬盤或分區組成的一個邏輯存儲單元，VG可以動態變動硬碟或分區。</p>
+		<p>8. <code>vgextend pve /dev/sdb1</code>將sdb1分區作為VG儲存空間</p>
+		<p>9. <code>vgdisplay</code>查看VG資訊，這時候Free PE / Size會比原本的空間還多</p>
+		<h3>讓LVM使用更多的VG儲存空間</h3>
+		<p>10. Logical Volume Manager中文稱邏輯卷管理器(以下簡稱LVM)，上面有稍微介紹過了，它是在VG之上建立的一個邏輯卷管理系統，一樣可以動態調整儲存空間大小</p>
+		<p>11. 如果不想了解太多沒關係，總之要把VG的儲存空間加入到LVM，才可以有更多虛擬空間供VM使用。</p>
+		<p>12. <code>lvextend -L +100G /dev/pve/data</code>增加100G的儲存空間<code>vgdisplay</code>中的Free PE，這就是最多可以增加的容量。</p>
+		<p>OK! 這樣就完成了，網頁控制面板點擊local-lvm，就能看到儲存空間有增加了，也可以用<code>lvdisplay</code>顯示LV可使用的儲存空間。</p>
+	</div>
+	<footer>
+		<div class="footer-social-media">
+			<a href="https://www.facebook.com/profile.php?id=100064249505130"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://twitter.com/yyj_network"><i class="fa-brands fa-twitter"></i></a>
+			<a href="https://www.instagram.com/yang.yaozhu"><i class="fa-brands fa-instagram"></i></a>
+			<a href="https://github.com/YYJ-TW"><i class="fa-brands fa-github"></i></a>
+		</div>
+		<div class="footer-pages">
+			<a href="https://yyjstudio.com/terms">服務條款</a>
+			<a href="https://yyjstudio.com/job">職缺</a>
+		</div>
+		<div class="footer-copyright">
+			<p>2023 &copy; YYJ Network Studio</p>
+		</div>
+	</footer>
+	<script src="https://kit.fontawesome.com/098165415c.js" crossorigin="anonymous"></script>
+</body>

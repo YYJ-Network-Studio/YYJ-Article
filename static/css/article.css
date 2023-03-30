@@ -88,3 +88,9 @@ img {
 .link a {
     display: block;
 }
+code {
+    padding: 5px;
+    border-radius: 5px;
+    color: white!important;
+    background-color: black;
+}
