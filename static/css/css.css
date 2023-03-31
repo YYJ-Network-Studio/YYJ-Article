@@ -1,8 +1,7 @@
 /*------------------------------------------------------------
 --------------------Defult CSS settings-----------------------
 ------------------------------------------------------------*/
-html, body {
-    height: 100%;
+body {
     background-color: #E5E5E5;
 }
 ul, li {
@@ -51,7 +50,7 @@ nav ul {
     list-style: none;
 }
 nav ul li {
-    margin: 0;
+    margin-right: auto;
 }
 nav ul li a {
     font-size: 20px;
@@ -67,6 +66,13 @@ nav ul li a:hover {
     color: black;
     background: white;
     text-decoration: none;
+}
+nav ul li i {
+    top: 10;
+    right: 5%;
+    color: white;
+    position: absolute;
+    transform: translateY(-50%);
 }
 /*------------------------------------------------------------
 --------------------Introduction Settings---------------------
