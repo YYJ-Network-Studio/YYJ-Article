@@ -5,7 +5,9 @@
 }
 
 /* Search */
-
+.dark-mode .search {
+    background-color: #272727;
+}
 .search {
     padding: 1%;
     position: relative;
@@ -45,7 +47,7 @@
     transition: 0.5s;
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: #E5E5E5;
+    background-color: white;
 }
 .dark-mode .article-list li {
     width: 80%;

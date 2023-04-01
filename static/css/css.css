@@ -2,7 +2,7 @@
 --------------------Defult CSS settings-----------------------
 ------------------------------------------------------------*/
 body {
-    background-color: #E5E5E5;
+    background-color: #E5E5E5!important;
 }
 ul, li {
     list-style-type: none;
