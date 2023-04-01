@@ -52,6 +52,13 @@
 	<div class="article-list">
 		<ul>
 			<li>
+				<a href="posts/fg1.html">FortiGate 防火牆設備 #1｜解決Outgoing外網不走固定的WAN Interface</a>
+				<p>最近重啟FortiGate後，發現出去(Outgoing)的IP又變成浮動，本來192.168.1.100-110進出應該都是走WAN1固定IP，但是因為沒有設置Policy Routes(政策路由)，可能會發生有時走WAN1有時走WAN2的問題。額外補充Static Routes(靜態路由)的Administrative Distance(管理距離)知識。</p>
+				<span>2023/4/1</span>
+				<span class="hashtag">#policy routing</span>
+				<span class="hashtag">#fortigate</span>
+			</li>
+			<li>
 				<a href="posts/pve1.html">Proxmox VE 虛擬機管理 #1｜新增儲存空間到local-lvm</a>
 				<p>預設用來創建虛擬機(VM)和容器(CT)的local-lvm虛擬硬碟，只會使用到/dev/sda/的硬碟空間，本篇文章教學該如何新增更多的儲存空間到local-lvm供虛擬機(VM)和容器(CT)使用。</p>
 				<span>2023/3/30</span>
@@ -112,6 +119,7 @@
 			<p>2023 &copy; YYJ Network Studio</p>
 		</div>
 	</footer>
+	<script src="https://cdn.master.co/css"></script>
 	<script type="text/javascript" src="static/js/theme.js"></script>
 	<script type="text/javascript" src="static/js/search.js"></script>
 	<script src="https://kit.fontawesome.com/098165415c.js" crossorigin="anonymous"></script>

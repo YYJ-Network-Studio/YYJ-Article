@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <!--YYJ Network Studio Website-->
+	<title>FortiGate 防火牆設備 #1｜解決Outgoing外網不走固定的WAN Interface</title>
+	<!--meta > charset-->
+	<meta charset="utf-8">
+	<!--meta > http-equiv-->
+	<meta http-equiv="content-language" content="zh-TW">
+	<!--meta > name-->
+	<meta name="author" content="YYJ">
+	<meta name="distribution" content="Taiwan">
+	<meta name="revisit-after" content="3 days">
+	<meta name="copyright" content="2023 © YYJ Network Studio">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Keywords -->
+	<meta name="keywords" Lang="EN" content="fortinet,fortigate,fortigate policy routes,fortigate outgoing wan,fortigate outgoing ip,static routes,ad,administrative distance">
+	<meta name="keywords" Lang="zh-TW" content="防火牆,路由器,fortigate政策路由,fortigate wan亂跳,fortigate ip亂跳,fortigate出口wan亂跳,fortigate出口ip亂跳,靜態路由,管理距離,管理距離該設多少">
+	<!-- Description -->
+	<meta name="description" content="最近重啟FortiGate後，發現出去(Outgoing)的IP又變成浮動，本來192.168.1.100-110進出應該都是走WAN1固定IP，但是因為沒有設置Policy Routes(政策路由)，可能會發生有時走WAN1有時走WAN2的問題。額外補充Static Routes(靜態路由)的Administrative Distance(管理距離)知識。">
+	<!--link > rel-->
+	<link rel="icon" href="../static/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../static/css/css.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/rwd.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/article.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			YYJ Network Studio
+		</div>
+		<input type="checkbox" id="click">
+    	<label for="click" class="menu">
+        	<i class="fas fa-bars"></i>
+    	</label>
+		<ul>
+			<li>
+				<a href="https://yyjstudio.com/index">首頁</a>
+            	<a class="active" href="../index.html">文章</a>
+            	<a href="https://yyjstudio.com/service">服務</a>
+			</li>
+		</ul>
+	</nav>
+	<h1>FortiGate 防火牆設備 #1｜解決Outgoing外網不走固定的WAN Interface</h1>
+	<div class="article-line"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12" style="text-align: left;">
+				<h2>如何解決上述問題？</h2>
+				<p>聲明：本人並非專業，如教學內容有誤請指正，也歡迎交流相關技術知識。</p>
+				<p>1. 登入FortiGate Web GUI管理介面後</p>
+				<p>2. Network -> Policy Routes</p>
+				<p>3. 左上方點擊Create New -> IPv4 Policy Routes</p>
+				<p>4. Incoming Interface選擇LAN</p>
+				<p>5. Source Address的IP/Netmask填寫你要Outgoing的WAN Interface</p>
+				<p>6. Destination Address的IP/Netmask填寫內網IP(看你要指定哪些內網IP走你指定的WAN Interface出去)</p>
+				<p>7. Then的Action選擇Forward Traffic</p>
+				<p>8. Outgoing Interface選擇要出去的WAN Interface</p>
+				<p>9. Gateway address就是你登入FortiGate Web GUI管理介面的內網IP，預設是192.168.1.99</p>
+				<img class="img-thumbnail" src="../static/images/policy-routes.png">
+				<p style="text-align: center;">按下OK就完成囉！</p>
+				<h2>額外補充：Static Routes 靜態路由</h2>
+				<p>重點：如果Static Routes兩個WAN Interface的Administrative Distance(管理距離，以下簡稱AD)都設定相同值，將被路由視為ECMP，導致Outgoing的IP亂跳。</p>
+				<img class="img-thumbnail" src="../static/images/static-routes.png">
+				<p>FortiGate對AD的解釋：Adminstrative distance is used to determine the cost of the route. Smaller distances are considered as a "better" route that should be used when multiple path exist to the same destination. The routes with same distance will be considered as ECMP.</p>
+				<p>Google翻譯：管理距離用於確定路由的成本。 較小的距離被認為是“更好”的路線，當存在到同一目的地的多條路徑時應該使用這種路線。 距離相同的路由將被視為 ECMP。</p>
+				<p>AD值可以從0-255調整，每一種路由協定都有預設的AD值，AD值越低代表可靠性越高、優先級越高，如果你有看過我的<a href="../posts/3.html">神經網路文章</a>，那你可以把AD值理解成Weights(權重)。</p>
+				<h4>各種路由協議的預設管理距離</h4>
+				<img style="height: 300px; width: auto; "src="https://1.bp.blogspot.com/-gSotq0kh8Bc/XpXt_ianjfI/AAAAAAAAAuo/nekwzLYb9woKRgjI3bUMMgsSqgT8ie4lgCK4BGAsYHg/AD.png">
+				<p style="text-align: center;">資料來源：https://www.networkurge.com/2020/04/administrative-distance-of-ip-routing.html</p>
+				<p>總之AD值越小，被選中的概率就比較大，假設WAN1為主線路就設定比WAN2更小的值。</p>
+				<h4>ECMP(Equal-cost multi-path，中文稱等價多路徑)</h4>
+				<p>這是用來實現這是用來實現負載均衡，不過在FortiGate中這個功能很陽春，不能指定來源(Source)，如果要指派某個來源出去時去連某個外網，就需要啟用Policy Routes，不過這就會破壞原本在Static Routes規則。</p>
+				<h4>Priority 優先權</h4>
+				<p>在Static Routes頁面中展開Advanced Options會看到Priority，假設WAN1是主線路，而WAN2是備用線路，就可以把WAN1設置為1，WAN2設置為2，優先走WAN1線路，當WAN1無法使用時將會切換至WAN2。</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="footer-social-media">
+			<a href="https://www.facebook.com/profile.php?id=100064249505130"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://twitter.com/yyj_network"><i class="fa-brands fa-twitter"></i></a>
+			<a href="https://www.instagram.com/yang.yaozhu"><i class="fa-brands fa-instagram"></i></a>
+			<a href="https://github.com/YYJ-TW"><i class="fa-brands fa-github"></i></a>
+		</div>
+		<div class="footer-pages">
+			<a href="https://yyjstudio.com/terms">服務條款</a>
+			<a href="https://yyjstudio.com/job">職缺</a>
+		</div>
+		<div class="footer-copyright">
+			<p>2023 &copy; YYJ Network Studio</p>
+		</div>
+	</footer>
+	<script src="https://kit.fontawesome.com/098165415c.js" crossorigin="anonymous"></script>
+</body>
