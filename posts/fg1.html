@@ -68,7 +68,7 @@
 				<p>AD值可以從0-255調整，每一種路由協定都有預設的AD值，AD值越低代表可靠性越高、優先級越高，如果你有看過我的<a href="../posts/3.html">神經網路文章</a>，那你可以把AD值理解成Weights(權重)。</p>
 				<h4>各種路由協議的預設管理距離</h4>
 				<img style="height: 300px; width: auto; "src="https://1.bp.blogspot.com/-gSotq0kh8Bc/XpXt_ianjfI/AAAAAAAAAuo/nekwzLYb9woKRgjI3bUMMgsSqgT8ie4lgCK4BGAsYHg/AD.png">
-				<p style="text-align: center;">資料來源：https://www.networkurge.com/2020/04/administrative-distance-of-ip-routing.html</p>
+				<p class="source">資料來源：https://www.networkurge.com/2020/04/administrative-distance-of-ip-routing.html</p>
 				<p>總之AD值越小，被選中的概率就比較大，假設WAN1為主線路就設定比WAN2更小的值。</p>
 				<h4>ECMP(Equal-cost multi-path，中文稱等價多路徑)</h4>
 				<p>這是用來實現這是用來實現負載均衡，不過在FortiGate中這個功能很陽春，不能指定來源(Source)，如果要指派某個來源出去時去連某個外網，就需要啟用Policy Routes，不過這就會破壞原本在Static Routes規則。</p>
