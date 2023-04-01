@@ -36,25 +36,6 @@
     color: white;
     background-color: #272727;
 }
-.article-list {
-    width: 80%;
-    padding: 20px;
-    display: table;
-    margin: 0 auto;
-    transition: 0.5s;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-.dark-mode .article-list {
-    width: 80%;
-    padding: 20px;
-    display: table;
-    margin: 0 auto;
-    transition: 0.5s;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #272727;
-}
 .article-list li {
     width: 80%;
     padding: 20px;
