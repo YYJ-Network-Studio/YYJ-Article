@@ -1,10 +1,7 @@
-/* Dark mode */
-.dark-mode {
-    color: white;
+/* Search */
+.dark-mode .container {
     background-color: #272727;
 }
-
-/* Search */
 .dark-mode .search {
     background-color: #272727;
 }

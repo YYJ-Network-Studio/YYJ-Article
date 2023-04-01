@@ -1,9 +1,23 @@
-/*------------------------------------------------------------
---------------------Defult CSS settings-----------------------
-------------------------------------------------------------*/
-body {
-    background-color: #E5E5E5!important;
+#body {
+    background-color: #E5E5E5;
 }
+/* Dark mode */
+
+.dark-mode {
+    color: white;
+    background-color: #272727;
+}
+.i {
+    position: relative;
+}
+.fa-moon {
+    top: 0;
+    right: 5%;
+    position: absolute;
+}
+
+/* Basic label */
+
 ul, li {
     list-style-type: none;
 }
@@ -13,9 +27,9 @@ a {
 a:hover {
     text-decoration: none;
 }
-/*------------------------------------------------------------
---------------------Navigation Menu Settings------------------
-------------------------------------------------------------*/
+
+/* Nav */
+
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +47,7 @@ nav {
     justify-content: space-between;
 }
 nav .logo {
-    color: #FFF;
+    color: white;
     font-size: 35px;
     font-weight: 600;
 }
@@ -74,17 +88,17 @@ nav ul li i {
     position: absolute;
     transform: translateY(-50%);
 }
-/*------------------------------------------------------------
---------------------Introduction Settings---------------------
-------------------------------------------------------------*/
+
+/* Intro */
+
 .col-12 {
     padding: 3%;
     font-size: 20px;
     text-align: center;
 }
-/*------------------------------------------------------------
---------------------Footer settings---------------------------
-------------------------------------------------------------*/
+
+/* Footer */
+
 footer {
     width: 100%;
     padding: 50px 5%; /* Height Border */
