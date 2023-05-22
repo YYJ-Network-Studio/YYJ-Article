@@ -1,9 +1,8 @@
 /* Nav RWD */
 
 @media (max-width: 1000px) {
-    nav .logo {
-        font-size: 25px;
-        text-align: center;
+    .fa-moon {
+        top: 5px;
     }
     nav .menu i {
         display: block;
@@ -29,11 +28,11 @@
         background: #1B1B1B;
         transition: all 0.3s ease;
     }
-    nav ul li{
+    nav ul li {
         width: 100%;
         margin: 40px 0;
     }
-    nav ul li a{
+    nav ul li a {
         width: 100%;
         display: block;
         font-size: 20px;
