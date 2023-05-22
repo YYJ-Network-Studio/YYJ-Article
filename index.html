@@ -27,24 +27,21 @@
 </head>
 <body id="body">
 	<nav>
-		<div class="logo">
-			YYJ Network Studio
-		</div>
 		<div class="i">
 			<i class="fa-regular fa-moon" style="color: white;" id="theme"></i>
 		</div>
 		<input type="checkbox" id="click">
-    	<label for="click" class="menu">
-        	<i class="fas fa-bars"></i>
-    	</label>
+		<label for="click" class="menu">
+			<i class="fas fa-bars"></i>
+		</label>
 		<ul>
-			<li>
-				<a href="https://yyjstudio.com/index">首頁</a>
-            	<a class="active" href="">文章</a>
-            	<a href="https://yyjstudio.com/service">服務</a>
-			</li>
+			<li><a href="https://yyjstudio.com">關於我<i class="fa-solid fa-arrow-up-right-from-square ml-3"></i></a></li>
+			<li><a href="https://article.yyjstudio.com">文章</a></li>
+			<li><a href="https://yyjstudio.com/service">商城<i class="fa-solid fa-arrow-up-right-from-square ml-3"></i></a></li>
+
 		</ul>
 	</nav>
+
 	<div class="search">
 		<input type="text" id="searchBar" onkeyup=search() placeholder="搜尋標題或標籤(例: 年齡焦慮、#AI)">
 		<span>文章分類</span>
@@ -52,6 +49,7 @@
 		<a class="a" onclick="searchByHashtag('個人經歷')">#個人經歷</a>
 		<a class="a" onclick="searchByHashtag('容貌焦慮')">#容貌焦慮</a>
 	</div>
+
 	<div class="article-list">
 		<ul>
 			<li>
